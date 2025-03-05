@@ -60,7 +60,7 @@ curl -X POST "http://localhost:3000/api/auth/register" -H "Content-Type: applica
 |--------|------|------------|
 | `POST` | `/api/auth/register` | Registro de usuario |
 | `POST` | `/api/auth/login` | Inicio de sesión |
-| `GET`  | `/api/protected` | Ruta protegida (requiere token) |
+
 
 📄 **Documentación completa en:** [`API_Documentacion.md`](./API_Documentacion.md)
 
