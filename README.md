@@ -27,7 +27,7 @@ Esta API permite el **registro e inicio de sesión de usuarios** con autenticaci
 ## 📌 Instalación y Uso
 ### 1️⃣ Clonar el repositorio
 ```bash
-git clone https://github.com/usuario/nombre-repo.git](https://github.com/JohanBoDev/Autenticacion_Usuarios_SENA
+git clone https://github.com/JohanBoDev/Autenticacion_Usuarios_SENA
 cd Autenticacion_Usuarios_SENA
 ```
 ### 2️⃣ Instalar dependencias
