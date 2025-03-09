@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "6e2a5f62-24a6-4e3d-a619-6ce3baabca34",
+		"name": "Autenticacion Usuarios SENA",
+		"description": "## **Documentación de la API - Autenticación**\n\n### **Endpoint: Registro de Usuario**\n\n- **Método:** `POST`\n    \n- **URL:** `http://localhost:5000/api/auth/register`\n    \n- **Descripción:**\n    \n    Este endpoint permite registrar nuevos usuarios en el sistema. Se debe enviar un objeto JSON con los datos del usuario (nombre, email y contraseña). La contraseña será encriptada antes de almacenarse en la base de datos para mayor seguridad.\n    \n- { \"name\": \"Johan Bohorquez\", \"email\": \"[johan@example.com](https://mailto:johan@example.com)\", \"password\": \"12345678\"}\n    \n- **Respuestas posibles:**\n    \n    - jsonCopiarEditar{ \"message\": \"Usuario registrado exitosamente\"}\n        \n    - jsonCopiarEditar{ \"error\": \"El usuario ya existe\"}\n        \n    - jsonCopiarEditar{ \"error\": \"Error en la base de datos\"}\n        \n\n---\n\n### **Endpoint: Inicio de Sesión**\n\n- **Método:** `POST`\n    \n- **URL:** `http://localhost:5000/api/auth/login`\n    \n- **Descripción:**\n    \n    Este endpoint permite a los usuarios autenticarse en el sistema. Recibe un email y una contraseña, y si las credenciales son correctas, devuelve un token JWT para manejar la sesión del usuario.\n    \n- { \"email\": \"[johan@example.com](https://mailto:johan@example.com)\", \"password\": \"12345678\"}\n    \n- **Respuestas posibles:**\n    \n    - jsonCopiarEditar{ \"message\": \"Autenticación exitosa\", \"token\": \"eyJhbGciOiJIUzI1NiIsIn...\"}\n        \n    - jsonCopiarEditar{ \"error\": \"Usuario no encontrado\"}\n        \n    - jsonCopiarEditar{ \"error\": \"Contraseña incorrecta\"}\n        \n    - jsonCopiarEditar{ \"error\": \"Error en la base de datos\"}\n        \n\n---\n\n### **General - Funcionamiento de la API**\n\nLa API de autenticación consta de dos endpoints principales:\n\n1. **`POST /api/auth/register`**: Registra un usuario nuevo en la base de datos con una contraseña encriptada.\n    \n2. **`POST /api/auth/login`**: Verifica credenciales y devuelve un token JWT para manejar la sesión.\n    \n\n- **Seguridad Implementada:**\n    \n    - **Bcrypt.js** para encriptación de contraseñas.\n        \n    - **JWT (JSON Web Token)** para autenticación segura.\n        \n    - **Manejo de errores** en base de datos y credenciales inválidas.\n        \n- **Requisitos Previos:**\n    \n    - La API debe estar corriendo en `http://localhost:5000`.\n        \n    - Se debe tener MySQL configurado con la tabla `users`.\n        \n    - Se recomienda usar **Postman** o cualquier cliente API para probar los endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36435827"
+	},
+	"item": [
+		{
+			"name": "Registro de Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Johan Bohorquez\",\r\n    \"email\": \"johan@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/auth/register",
+				"description": "- Este endpoint permite registrar nuevos usuarios en el sistema. Se debe enviar un objeto JSON con los datos del usuario (nombre, email y contraseña). La contraseña será encriptada antes de almacenarse en la base de datos para mayor seguridad."
+			},
+			"response": []
+		},
+		{
+			"name": "Inicio de sesión",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"description": "- Este endpoint permite a los usuarios autenticarse en el sistema. Recibe un email y una contraseña, y si las credenciales son correctas, devuelve un token JWT para manejar la sesión del usuario."
+			},
+			"response": []
+		}
+	]
+}
